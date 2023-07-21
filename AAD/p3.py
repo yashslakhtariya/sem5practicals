@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 import YSL_io as YSL
+import matplotlib
+matplotlib.use('GTK3Agg') # use GTK3 as graphical backend for pyplot windows
 
 
 def loop(n):
