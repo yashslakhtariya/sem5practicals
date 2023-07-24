@@ -1,0 +1,85 @@
+import random
+import matplotlib.pyplot as plt
+
+
+# Insertion Sort
+def insrtn_sort(ysl):
+    n = len(ysl)
+    count = 0
+    for i in range(1, n):
+        key = ysl[i]
+        j = i - 1
+        while j >= 0 and key < ysl[j]:
+            ysl[j + 1] = ysl[j]
+            j -= 1
+            count += 1
+        ysl[j + 1] = key
+    return count
+
+
+# Bubble Sort
+def bble_sort(ysl):
+    n = len(ysl)
+    count = 0
+    for i in range(n):
+        flag = False
+        for j in range(0, n - i - 1):
+            count += 1
+            if ysl[j] > ysl[j + 1]:
+                ysl[j], ysl[j + 1] = ysl[j + 1], ysl[j]
+                flag = True
+        if not flag:
+            break
+    return count
+
+
+# Selection Sort
+def slctn_sort(ysl):
+    n = len(ysl)
+    count = 0
+    for i in range(n):
+        min_index = i
+        for j in range(i + 1, n):
+            count += 1
+            if ysl[j] < ysl[min_index]:
+                min_index = j
+        ysl[i], ysl[min_index] = ysl[min_index], ysl[i]
+    return count
+
+
+# Function to plot the comparison graph for a data category
+def compare(size, algos, labels, colors, data_category="random"):
+    plt.figure()
+    plt.xlabel("Data Size")
+    plt.ylabel("Count of Iterations")
+    plt.title(f"\nSorting Algorithm Comparison for {data_category} data\n", fontsize=15)
+
+    for i, algo in enumerate(algos):
+        iterations = []
+        for s in size:
+            data = [random.randint(1, 100) for y in range(s)]
+            if data_category == "ascending":
+                data.sort()
+            elif data_category == "descending":
+                data.sort(reverse=True)
+            iterations.append(algo(data))
+
+        plt.plot(size, iterations, marker="o", label=labels[i], color=colors[i])
+
+    plt.legend()
+    plt.grid(True)
+
+
+size = [10, 20, 50, 80, 100]
+
+algos = [insrtn_sort, bble_sort, slctn_sort]
+labels = ["Insertion Sort", "Bubble Sort", "Selection Sort"]
+
+colors = ["#a347ba", "#5e81cc", "#b75969"]
+
+compare(size, algos, labels, colors, "ascending")
+compare(size, algos, labels, colors, "descending")
+compare(size, algos, labels, colors)
+
+
+plt.show()
