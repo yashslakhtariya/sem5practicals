@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YSL Light Bulb</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #ffffff;
+      }
+
+      #bulb {
+        width: 500px;
+        height: 500px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="bulb"
+      style="background-image: url('bulb_off.png')"
+      onclick="toggleBulb()"
+    ></div>
+
+    <script>
+      let isBulbOn = false;
+      function toggleBulb() {
+        const bulbImage = document.getElementById("bulb");
+
+        if (isBulbOn) {
+          bulbImage.style.backgroundImage = "url('bulb_off.png')";
+        } else {
+          bulbImage.style.backgroundImage = "url('bulb_on.png')";
+        }
+        isBulbOn =!isBulbOn;
+      }
+    </script>
+  </body>
+</html>
