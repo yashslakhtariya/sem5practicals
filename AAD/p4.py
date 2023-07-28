@@ -38,7 +38,7 @@ for i in range(1, n + 1):
      result, loop_count = loop(i)
      count_l.append(loop_count)
      fibonacci_sequence.append(result)
-     print(result, end=" ")
+     print(result, end=", ") if i < n else print(result, end=' ')
 
 data = list(range(1, n + 1))
 plt.plot(data, count_l, "-o", label="Iterative Count", color='#d18677', linewidth=5, markersize=10)
