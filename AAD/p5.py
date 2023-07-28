@@ -1,5 +1,7 @@
 import random
 import matplotlib.pyplot as plt
+from matplotlib import use
+use('GTK3Agg')
 
 # Insertion Sort
 def insrtn_sort(ysl):
