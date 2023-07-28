@@ -1,7 +1,6 @@
 import random
 import matplotlib.pyplot as plt
 
-
 # Insertion Sort
 def insrtn_sort(ysl):
     n = len(ysl)
@@ -63,23 +62,24 @@ def compare(size, algos, labels, colors, data_category="random"):
             elif data_category == "descending":
                 data.sort(reverse=True)
             iterations.append(algo(data))
+            print(f'\n{data}')
 
-        plt.plot(size, iterations, marker="o", label=labels[i], color=colors[i])
+        plt.plot(size, iterations, marker="o", label=labels[i], color=colors[i])       
 
     plt.legend()
     plt.grid(True)
 
 
-size = [10, 20, 50, 80, 100]
+size = [10, 20, 30, 50, 80]
 
 algos = [insrtn_sort, bble_sort, slctn_sort]
-labels = ["Insertion Sort", "Bubble Sort", "Selection Sort"]
+methods = ["Insertion Sort", "Bubble Sort", "Selection Sort"]
 
 colors = ["#a347ba", "#5e81cc", "#b75969"]
 
-compare(size, algos, labels, colors, "ascending")
-compare(size, algos, labels, colors, "descending")
-compare(size, algos, labels, colors)
+compare(size, algos, methods, colors, "ascending")
+compare(size, algos, methods, colors, "descending")
+compare(size, algos, methods, colors)
 
 
 plt.show()
