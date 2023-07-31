@@ -2,6 +2,7 @@ import random
 import matplotlib.pyplot as plt
 from matplotlib import use
 use('GTK3Agg')
+import YSL_io as YSL
 
 # Insertion Sort
 def insrtn_sort(ysl):
@@ -64,9 +65,18 @@ def compare(size, algos, labels, colors, data_category="random"):
             elif data_category == "descending":
                 data.sort(reverse=True)
             iterations.append(algo(data))
-            print(f'\n{data}')
+            # print(f'\n{data}')
 
-        plt.plot(size, iterations, marker="o", label=labels[i], color=colors[i])       
+        plt.plot(size, iterations, marker="o", label=labels[i], color=colors[i]) 
+        if i==0:
+            YSL.printGRN(f'\nFor {data_category.capitalize()} data, number of iterations using {labels[i]} for sizes - {size}', end=' : ')
+            print(iterations)
+        elif i==1:
+            YSL.printORNG(f'For {data_category.capitalize()} data, number of iterations using {labels[i]} for sizes - {size}', end=' : ')
+            print(iterations)
+        else:
+            YSL.printBLU(f'For {data_category.capitalize()} data, number of iterations using {labels[i]} for sizes - {size}', end=' : ')
+            print(iterations)
 
     plt.legend()
     plt.grid(True)
