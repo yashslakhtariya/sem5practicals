@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 from matplotlib import use
-use('GTK3Agg')
+use('Qt5Agg')
 import YSL_io as YSL
 
 def rcrsn(n):
