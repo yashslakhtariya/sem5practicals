@@ -6,8 +6,8 @@ app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-var port = 4200;
-var emps = [
+let port = 4200;
+let emps = [
   {
     id: "1",
     name: "Madhav",
@@ -54,7 +54,7 @@ app.get("/ysl/employees/:id", (req, res) => {
 });
 
 app.post("/ysl/employees", (req, res) => {
-  var product = {
+  let product = {
     id: req.body.id,
     name: req.body.name,
     email: req.body.email,
@@ -66,7 +66,7 @@ app.post("/ysl/employees", (req, res) => {
 });
 
 app.put("/ysl/employees/:id", (req, res) => {
-  var product = emps.find(({ id }) => id === req.params.id);
+  let product = emps.find(({ id }) => id === req.params.id);
   if (!product) res.status(404).send("Not found!");
   product.id = req.body.id;
   product.name = req.body.name;
@@ -88,5 +88,5 @@ app.delete("/ysl/employees/:id", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`\nThe server is running on port ${port}`);
+  console.log(`\nThe server is running on port ${port}\n`);
 });

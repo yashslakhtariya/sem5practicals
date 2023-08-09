@@ -1,11 +1,10 @@
-var express = require("express");
-var path = require("path");
-var bodyParser = require("body-parser");
-var app = express();
+let express = require("express");
+let bodyParser = require("body-parser");
+let app = express();
 
-var port = 7575;
+let port = 4200;
 
-var emps = [
+let emps = [
   {
     id: "1",
     name: "Madhav",
@@ -47,15 +46,15 @@ app.get("/ysl/employees", (req, res) => {
   res.send(emps);
 });
 
-app.get("/ysl/employeesid", (req, res) => {
+app.get("/ysl/employees/get", (req, res) => {
   const product = emps.find(({ id }) => id == req.query.id);
 
   if (!product) res.status(404).send("Not found!");
   else res.send(product);
 });
 
-app.post("/ysl/employeesadd", (req, res) => {
-  var product = {
+app.post("/ysl/employees/add", (req, res) => {
+  let product = {
     id: req.body.id,
     name: req.body.name,
     email: req.body.email,
@@ -66,8 +65,8 @@ app.post("/ysl/employeesadd", (req, res) => {
   res.send(product);
 });
 
-app.post("/ysl/employeeschange", (req, res) => {
-  var product = emps.find(({ id }) => id === req.body.id);
+app.post("/ysl/employees/change", (req, res) => {
+  let product = emps.find(({ id }) => id === req.body.id);
   if (!product) res.status(404).send("Not found!");
   else {
     product.name = req.body.name;
@@ -78,7 +77,7 @@ app.post("/ysl/employeeschange", (req, res) => {
   }
 });
 
-app.post("/ysl/employeesdelete", (req, res) => {
+app.post("/ysl/employees/delete", (req, res) => {
   const product = emps.find(({ id }) => id === req.body.id);
   if (!product) res.status(404).send("Not Found!");
   else {
@@ -89,5 +88,5 @@ app.post("/ysl/employeesdelete", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`\nThe server is running on port ${port}`);
+  console.log(`\nThe server is running on port ${port}\n`);
 });
