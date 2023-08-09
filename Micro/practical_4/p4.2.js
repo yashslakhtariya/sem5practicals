@@ -37,29 +37,24 @@ var emps = [
 ];
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "./public")));
+app.use(express.static(__dirname + "/public"));
 
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "./public/index.html"));
+  res.sendFile(__dirname + "/public/index.html");
 });
 
-app.get("/xyz/employees", (req, res) => {
+app.get("/ysl/employees", (req, res) => {
   res.send(emps);
 });
 
-app.get("/xyz/employeesid", (req, res) => {
+app.get("/ysl/employeesid", (req, res) => {
   const product = emps.find(({ id }) => id == req.query.id);
 
-  if (!product)
-    res
-      .status(404)
-      .send(
-        '<h2 style="font-family: Malgun Gothic; color: darkred;">Ooops... Cant find what you are looking for!</h2>'
-      );
+  if (!product) res.status(404).send("Not found!");
   else res.send(product);
 });
 
-app.post("/xyz/employeesadd", (req, res) => {
+app.post("/ysl/employeesadd", (req, res) => {
   var product = {
     id: req.body.id,
     name: req.body.name,
@@ -71,14 +66,9 @@ app.post("/xyz/employeesadd", (req, res) => {
   res.send(product);
 });
 
-app.post("/xyz/employeeschange", (req, res) => {
+app.post("/ysl/employeeschange", (req, res) => {
   var product = emps.find(({ id }) => id === req.body.id);
-  if (!product)
-    res
-      .status(404)
-      .send(
-        '<h2 style="font-family: Malgun Gothic; color: darkred;">Not Found!! </h2>'
-      );
+  if (!product) res.status(404).send("Not found!");
   else {
     product.name = req.body.name;
     product.email = req.body.email;
@@ -88,14 +78,9 @@ app.post("/xyz/employeeschange", (req, res) => {
   }
 });
 
-app.post("/xyz/employeesdelete", (req, res) => {
+app.post("/ysl/employeesdelete", (req, res) => {
   const product = emps.find(({ id }) => id === req.body.id);
-  if (!product)
-    res
-      .status(404)
-      .send(
-        '<h2 style="font-family: Malgun Gothic; color: darkred;"> Not Found!! </h2>'
-      );
+  if (!product) res.status(404).send("Not Found!");
   else {
     const index = emps.indexOf(product);
     emps.splice(index, 1);
@@ -104,5 +89,5 @@ app.post("/xyz/employeesdelete", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on port  http://localhost:${port}`);
+  console.log(`\nThe server is running on port ${port}`);
 });

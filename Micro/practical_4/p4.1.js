@@ -87,4 +87,6 @@ app.delete("/ysl/employees/:id", (req, res) => {
   res.send(product);
 });
 
-app.listen(port, () => console.log(`\nThe server is running on port ${port}`));
+app.listen(port, () => {
+  console.log(`\nThe server is running on port ${port}`);
+});
