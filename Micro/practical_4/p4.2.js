@@ -47,43 +47,43 @@ app.get("/ysl/employees", (req, res) => {
 });
 
 app.get("/ysl/employees/get", (req, res) => {
-  const product = emps.find(({ id }) => id == req.query.id);
+  const emp = emps.find(({ id }) => id == req.query.id);
 
-  if (!product) res.status(404).send("Not found!");
-  else res.send(product);
+  if (!emp) res.status(404).send("Not found!");
+  else res.send(emp);
 });
 
 app.post("/ysl/employees/add", (req, res) => {
-  let product = {
+  let emp = {
     id: req.body.id,
     name: req.body.name,
     email: req.body.email,
     phone: req.body.phone,
     dept: req.body.dept,
   };
-  emps.push(product);
-  res.send(product);
+  emps.push(emp);
+  res.send(emp);
 });
 
 app.post("/ysl/employees/change", (req, res) => {
-  let product = emps.find(({ id }) => id === req.body.id);
-  if (!product) res.status(404).send("Not found!");
+  let emp = emps.find(({ id }) => id === req.body.id);
+  if (!emp) res.status(404).send("Not found!");
   else {
-    product.name = req.body.name;
-    product.email = req.body.email;
-    product.phone = req.body.phone;
-    product.designation = req.body.designation;
-    res.send(product);
+    emp.name = req.body.name;
+    emp.email = req.body.email;
+    emp.phone = req.body.phone;
+    emp.designation = req.body.designation;
+    res.send(emp);
   }
 });
 
 app.post("/ysl/employees/delete", (req, res) => {
-  const product = emps.find(({ id }) => id === req.body.id);
-  if (!product) res.status(404).send("Not Found!");
+  const emp = emps.find(({ id }) => id === req.body.id);
+  if (!emp) res.status(404).send("Not Found!");
   else {
-    const index = emps.indexOf(product);
+    const index = emps.indexOf(emp);
     emps.splice(index, 1);
-    res.send(product);
+    res.send(emp);
   }
 });
 
