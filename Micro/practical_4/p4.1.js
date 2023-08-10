@@ -47,44 +47,44 @@ app.get("/ysl/employees", (req, res) => {
 });
 
 app.get("/ysl/employees/:id", (req, res) => {
-  const product = emps.find(({ id }) => id === req.params.id);
+  const emp = emps.find(({ id }) => id === req.params.id);
 
-  if (!product) res.status(404).send("Not found!");
-  res.send(product);
+  if (!emp) res.status(404).send("Not found!");
+  res.send(emp);
 });
 
 app.post("/ysl/employees", (req, res) => {
-  let product = {
+  let emp = {
     id: req.body.id,
     name: req.body.name,
     email: req.body.email,
     phone: req.body.phone,
     dept: req.body.dept,
   };
-  emps.push(product);
-  res.send(product);
+  emps.push(emp);
+  res.send(emp);
 });
 
 app.put("/ysl/employees/:id", (req, res) => {
-  let product = emps.find(({ id }) => id === req.params.id);
-  if (!product) res.status(404).send("Not found!");
-  product.id = req.body.id;
-  product.name = req.body.name;
-  product.email = req.body.email;
-  product.ln = req.body.ln;
-  product.phone = req.body.phone;
-  product.designation = req.body.designation;
-  res.send(product);
+  let emp = emps.find(({ id }) => id === req.params.id);
+  if (!emp) res.status(404).send("Not found!");
+  emp.id = req.body.id;
+  emp.name = req.body.name;
+  emp.email = req.body.email;
+  emp.ln = req.body.ln;
+  emp.phone = req.body.phone;
+  emp.designation = req.body.designation;
+  res.send(emp);
 });
 
 app.delete("/ysl/employees/:id", (req, res) => {
-  const product = emps.find(({ id }) => id === req.params.id);
-  if (!product) res.status(404).send("Not found!");
+  const emp = emps.find(({ id }) => id === req.params.id);
+  if (!emp) res.status(404).send("Not found!");
 
-  const index = emps.indexOf(product);
+  const index = emps.indexOf(emp);
   emps.splice(index, 1);
 
-  res.send(product);
+  res.send(emp);
 });
 
 app.listen(port, () => {
