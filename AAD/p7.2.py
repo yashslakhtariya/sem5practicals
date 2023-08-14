@@ -21,7 +21,7 @@ def lnr(ysl,x):
           return c
 data=pd.read_csv('./p7.2_data.csv')
 print()
-YSL_io.printGRN(data.set_index('id'))
+YSL_io.printCYN(data.set_index('id'))
 
 salary=list(data['salary'])
 max_sal=max(data['salary'])

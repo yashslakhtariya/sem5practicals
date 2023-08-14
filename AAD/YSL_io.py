@@ -15,8 +15,8 @@ def printMGNTA(y, end='\n'):
 def printORNG(y, end='\n'):
      print(colored(y, 'yellow'), end=end)
      
-# def printYLW(y):
-#      print(colored(y, 'cyan'))
+def printCYN(y):
+     print(colored(y, 'cyan'))
 
 
 def inputRED(y):
@@ -34,5 +34,5 @@ def inputMGNTA(y):
 def inputORNG(y):
      return input(colored(y, 'yellow'))
      
-# def inputYLW(y):
-#      return input(colored(y, 'cyan'))
+def inputCYN(y):
+     return input(colored(y, 'cyan'))
