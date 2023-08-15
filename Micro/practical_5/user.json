@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "username": "krishna",
+    "password": "govinda123",
+    "occupation": "Cowherd"
+  },
+  {
+    "id": 2,
+    "username": "madhava",
+    "password": "radhamadhav",
+    "occupation": "Flute Player"
+  },
+  {
+    "id": 3,
+    "username": "parthasarathi",
+    "password": "kuntiputra",
+    "occupation": "Charioteer of Arjuna"
+  },
+  {
+    "id": 4,
+    "username": "govinda",
+    "password": "haribol",
+    "occupation": "Pleasure Giver"
+  },
+  {
+    "id": 5,
+    "username": "muralidhara",
+    "password": "vrajarasa",
+    "occupation": "Bearer of the Flute"
+  },
+  {
+    "id": 6,
+    "username": "Narsimha",
+    "password": "narahari",
+    "occupation": "Supreme Protector"
+  },
+  {
+    "id": 7,
+    "username": "giridhari",
+    "password": "govardhan",
+    "occupation": "Govardhan Lifter"
+  },
+  {
+    "id": 8,
+    "username": "narayana",
+    "password": "vishnu108",
+    "occupation": "Supreme Manager"
+  },
+  {
+    "id": 9,
+    "username": "dwarakadhish",
+    "password": "rukmini",
+    "occupation": "King of Dwaraka"
+  },
+  {
+    "id": 10,
+    "username": "Gauranga",
+    "password": "chaitanya",
+    "occupation": "Love Embassador"
+  }
+]
