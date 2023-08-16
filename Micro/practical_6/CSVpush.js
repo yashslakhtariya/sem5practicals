@@ -1,7 +1,7 @@
 const fs = require("fs");
 const csv = require("csv-parser");
 
-export function CSVpush() {
+function CSVpush() {
   const DATA = [];
   fs.createReadStream("./data.csv")
     .pipe(csv())
@@ -20,3 +20,5 @@ export function CSVpush() {
       });
     });
 }
+
+CSVpush();

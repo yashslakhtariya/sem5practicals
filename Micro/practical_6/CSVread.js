@@ -3,7 +3,7 @@ const csv = require("csv-parser");
 
 const results = [];
 
-export function CSVread() {
+function CSVread() {
   fs.createReadStream("./data.csv")
     .pipe(csv())
     .on("data", (data) => results.push(data))
@@ -12,3 +12,5 @@ export function CSVread() {
       console.log(results);
     });
 }
+
+CSVread();

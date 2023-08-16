@@ -1,7 +1,7 @@
 const fs = require("fs");
 const newName = "grocery.csv";
 
-export function CSVrename() {
+function CSVrename() {
   fs.rename("./data.csv", newName, (err) => {
     if (err) {
       console.error("Error renaming file : ", err);
@@ -10,3 +10,5 @@ export function CSVrename() {
     }
   });
 }
+
+CSVrename;
