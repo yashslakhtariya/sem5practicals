@@ -19,10 +19,10 @@ var sql =
 var order, nme, add, phone, ag;
 
 app.post("/api/store", (req, res) => {
-  (order = req.body.id),
+  (order = req.body.order_id),
     (nme = req.body.name),
     (add = req.body.address),
-    (phone = req.body.pn),
+    (phone = req.body.phonenumber),
     (ag = req.body.age);
 
   //values.push(product);
