@@ -1,0 +1,33 @@
+// LOAD DATA FOR TASK
+	   LXI H,3FFF
+	   MVI A,05
+	   MOV M,A
+	   LXI H,FF00
+	   MVI C,05
+	   MVI B,64
+
+DENTRY:	   MOV M,B
+	   INR B
+	   INX H
+	   DCR C
+	   JNZ DENTRY
+// -----------------------------------------
+// REVERSE
+	   LXI H,3FFF
+	   MOV C,M
+	   LXI H,FF00
+	   LXI D,3050
+	   MOV A,C
+	   ADD E
+	   MOV E,A
+	   MOV A,D
+	   ACI 00
+	   MOV D,A
+
+STORE:	   MOV A,M
+	   STAX D
+	   INX H
+	   DCX D
+	   DCR C
+	   JNZ STORE
+	   HLT

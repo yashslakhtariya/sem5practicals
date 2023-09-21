@@ -1,0 +1,24 @@
+	   MVI C,0F
+	   LXI H,2500
+	   MVI B,A0
+
+DENTRY:	   MOV M,B
+	   INR B
+	   INX H
+	   DCR C
+	   JNZ DENTRY
+	   LXI H,2500
+	   LXI D,2600
+	   MVI C,0F
+
+MAIN:	   MOV A,M
+	   ANI 01
+	   JNZ ODD
+	   MOV A,M
+	   STAX D
+	   INX D
+
+ODD:	   INX H
+	   DCR C
+	   JNZ MAIN
+	   HLT

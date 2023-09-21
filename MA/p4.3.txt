@@ -1,0 +1,22 @@
+	   LXI H,B010
+	   MVI B,32
+	   MVI C,05
+
+DENTRY:	   MOV M,B
+	   INR B
+	   INX H
+	   DCR C
+	   JNZ DENTRY
+	   MVI A,00
+	   MOV M,A
+// -------------------
+	   LXI H,B010
+	   LXI D,B020
+
+CHECK:	   MOV A,M
+	   STAX D
+	   INX H
+	   INX D
+	   CPI 00
+	   JNZ CHECK
+	   HLT
