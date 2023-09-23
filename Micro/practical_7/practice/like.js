@@ -9,7 +9,7 @@ con.connect(function (err) {
   if (err) throw err;
   console.log("Connected");
   con.query(
-    "SELECT * FROM customers WHERE name LIKE '%a_h%'",
+    "SELECT * FROM customers WHERE name LIKE 'S%'",
     function (err, result) {
       if (err) throw err;
       console.log(result);

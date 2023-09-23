@@ -9,7 +9,7 @@ con.connect(function (err) {
   if (err) throw err;
   console.log("\n\tConnected");
   con.query(
-    "select * from customers order by name;",
+    "delete from customers where phonenumber=12345;",
     function (err, result) {
       if (err) throw err;
       console.log(result);
