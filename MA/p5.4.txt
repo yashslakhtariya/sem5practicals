@@ -1,6 +1,6 @@
+	   MVI B,A0
 	   MVI C,0F
 	   LXI H,2500
-	   MVI B,A0
 
 DENTRY:	   MOV M,B
 	   INR B
