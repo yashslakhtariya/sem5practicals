@@ -2,12 +2,25 @@
 const express = require('express');
 
 // Connect
-require('../db/db');
+// require('../db/db');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://yash:haribol@127.0.0.1:27017/books', {   // MONGO_URI = mongodb://localhost:27017/DB_NAME
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+    //useFindAndModify: false,
+    //useCreateIndex: true
+}).then(() => {
+    console.log('Connection successfull!');
+}).catch((e) => {
+    console.log('Connection failed!');
+    console.log(e.message);
+});
 
 const Book = require('./Book');
 
 const app = express();
-const port = 3000;
+const port = 4200;
 app.use(express.json());
 app.post('/book', (req, res) => {
   const newBook = new Book({
@@ -20,7 +33,7 @@ app.post('/book', (req, res) => {
   newBook.save().then(() => {
     res.send('New Book created successfully!');
   }).catch((err) => {
-    res.status(500).send('Internal Server Error!');
+    res.status(500).send('Internal Server Error!' + err);
   });
 });
 

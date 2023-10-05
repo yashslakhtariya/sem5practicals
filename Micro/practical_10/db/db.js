@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/books' , {   // MONGO_URI = mongodb://localhost:27017/DB_NAME
+mongoose.connect('mongodb://yash:haribol@127.0.0.1:27017/books', {   // MONGO_URI = mongodb://localhost:27017/DB_NAME
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
     //useFindAndModify: false,
     //useCreateIndex: true
 }).then(() => {
@@ -10,4 +10,4 @@ mongoose.connect('mongodb://localhost:27017/books' , {   // MONGO_URI = mongodb:
 }).catch((e) => {
     console.log('Connection failed!');
     console.log(e.message);
-})
+});
