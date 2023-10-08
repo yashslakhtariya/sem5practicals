@@ -3,17 +3,7 @@ const express = require('express');
 const mongoose = require("mongoose");
 const axios = require('axios');
 // Connect
-mongoose.connect('mongodb://yash:haribol@127.0.0.1:27017/books', {   // MONGO_URI = mongodb://localhost:27017/DB_NAME
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-  //useFindAndModify: false,
-  //useCreateIndex: true
-}).then(() => {
-  console.log('Connection successfull!');
-}).catch((e) => {
-  console.log('Connection failed!');
-  console.log(e.message);
-});
+require('../db/db');
 
 const Order = require('./Order');
 
@@ -69,7 +59,7 @@ app.get('/order/:id', (req, res) => {
       axios.get(`http://localhost:5000/customer/${order.customerID}`).then((response) => {
         let orderObject = { CustomerName: response.data.name, BookTitle: '' };
 
-        axios.get(`http://localhost:3000/book/${order.bookID}`).then((response) => {
+        axios.get(`http://localhost:4200/book/${order.bookID}`).then((response) => {
           orderObject.BookTitle = response.data.title;
           res.json(orderObject);
         });
