@@ -23,8 +23,14 @@ def LCS(P, Q):
             i -= 1
         else:
             j -= 1
-
-    return ''.join(str(y) for y in lcs[::-1])
+        
+    def display():
+        for i in range(s1 + 1):
+            for j in range(s2 + 1):
+                print(dp[i][j], end="\t")
+            print()
+    return [''.join(str(y) for y in lcs[::-1]), display]
+    
 
 # Demo inputs : 
 #    P = "MNOAM" 
@@ -33,4 +39,7 @@ def LCS(P, Q):
 P=YSL_io.inputCYN("\n\tEnter the first sequence P : ")
 Q=YSL_io.inputCYN("\tEnter the second sequence Q : ")
 YSL_io.printORNG('\n\tLongest Common Subsequence (LCS) : ', end='')
-YSL_io.printRED(LCS(P, Q))
+ans = LCS(P, Q)
+YSL_io.printRED(ans[0])
+print('\nMatrix of LCS : \n')
+ans[1]()

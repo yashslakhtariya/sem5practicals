@@ -23,7 +23,7 @@ def f_knpsck(n, W, P, w):
         else:
             fraction = W / weight
         picked[index] = fraction
-        #    print(f"\t{round(ratio, 3)}, {value}, {weight}, {round(fraction, 3)}")
+
         YSL_io.printCYN(f"\t{round(ratio, 3)}", end=",  ")
         YSL_io.printGRN(value, end=",  ")
         YSL_io.printCYN(weight, end=",  ")

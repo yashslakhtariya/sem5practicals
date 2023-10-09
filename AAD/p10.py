@@ -14,6 +14,12 @@ def mcm(dmsns):
                 if cost < dp[i][j]:
                     dp[i][j] = cost
                     parenthesization[i][j] = k
+        
+    print('\nDP Matrix : \n')
+    for i in range(n):
+        for j in range(n):
+            print(dp[i][j], end="\t\t")
+        print()
 
     return dp[0][n - 1], optimal_parenthesization(parenthesization, 0, n - 1)
 

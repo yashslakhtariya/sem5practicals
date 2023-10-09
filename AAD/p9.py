@@ -19,6 +19,12 @@ def coin_change(coins, target):
                 else:
                     dp[i][j] = dp[i - 1][j]
                     combinations[i][j] = combinations[i - 1][j]
+    
+    print('\nDP Matrix : \n')
+    for i in range(len(coins)):
+        for j in range(target + 1):
+            print(dp[i][j], end="\t")
+        print()
 
     return dp[len(coins) - 1][target], combinations[len(coins) - 1][target]
 
