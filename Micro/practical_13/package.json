@@ -1,0 +1,14 @@
+{
+  "name": "practical_13",
+  "version": "1.0.0",
+  "description": "Microservices Practical-13",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "YSL",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

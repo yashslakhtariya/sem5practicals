@@ -1,0 +1,14 @@
+{
+  "name": "bulb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bulb_buttons.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CBA-student",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
