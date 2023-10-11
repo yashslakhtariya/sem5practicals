@@ -11,7 +11,7 @@ def mcm(dmsns):
             dp[i][j] = float('inf')
             for k in range(i, j):
                 cost = dp[i][k] + dp[k + 1][j] + dmsns[i] * dmsns[k + 1] * dmsns[j + 1]
-                if cost < dp[i][j]:
+                if cost < dp[i][j]: 
                     dp[i][j] = cost
                     parenthesization[i][j] = k
         

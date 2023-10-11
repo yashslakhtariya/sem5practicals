@@ -1,2 +1,1 @@
-matplotlib==3.7.3
-matplotlib-inline==0.1.6
+termcolor==2.3.0
