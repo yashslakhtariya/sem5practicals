@@ -1,0 +1,59 @@
+C51 COMPILER V8.16   DEMOCODE3                                                             10/12/2023 12:03:22 PAGE 1   
+
+
+C51 COMPILER V8.16, COMPILATION OF MODULE DEMOCODE3
+OBJECT MODULE PLACED IN democode3.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE democode3.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          delay()
+   3          {
+   4   1              int i,j;
+   5   1              for (i=0; i<200; i++)
+   6   1              {
+   7   2                      for (j=0; j<100; j++)
+   8   2                      {
+   9   3                      }
+  10   2              }
+  11   1      }
+  12          
+  13          void main()
+  14          {
+  15   1              int k;
+  16   1              while(1)
+  17   1              {
+  18   2                      P3 = 0X01;
+  19   2                      delay();
+  20   2                      P3 = 0X02;
+  21   2                      delay();
+  22   2                      P3 = 0X04;
+  23   2                      delay();
+  24   2                      P3 = 0X08;
+  25   2                      delay();
+  26   2                      P3 = 0X10;
+  27   2                      delay();
+  28   2                      P3 = 0X20;
+  29   2                      delay();
+  30   2                      P3 = 0X40;
+  31   2                      delay();
+  32   2                      P3 = 0X80;
+  33   2                      delay();
+  34   2              }
+  35   1      }
+*** WARNING C280 IN LINE 15 OF DEMOCODE3.C: 'k': unreferenced local variable
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     79    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

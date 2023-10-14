@@ -1,0 +1,41 @@
+A51 MACRO ASSEMBLER  P6_2                                                                 10/14/2023 04:46:03 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.01
+OBJECT MODULE PLACED IN p6.2.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE p6.2.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+0000 75D008            2     MOV PSW,#08H  
+0003 7B64              3     MOV R3,#64H
+0005 751B32            4     MOV 1BH,#32H
+0008 75D018            5     MOV PSW,#18H  
+000B 75D008            6     MOV PSW,#08H  
+                       7     
+                       8     
+000E EB                9     MOV A,R3
+000F FA               10     MOV R2,A
+0010 E51B             11     MOV A,1BH
+0012 850B1B           12     MOV 1BH,0BH
+0015 FB               13     MOV R3,A
+                      14     
+                      15     
+0016 75D018           16     MOV PSW,#18H  
+*** WARNING #A41 IN 16 (p6.2.asm, LINE 16): MISSING 'END' STATEMENT
+A51 MACRO ASSEMBLER  P6_2                                                                 10/14/2023 04:46:03 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+PSW. . . . . . . .  D ADDR   00D0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 0 ERROR(S)

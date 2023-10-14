@@ -1,0 +1,47 @@
+C51 COMPILER V8.16   DEMOCODE4                                                             10/12/2023 12:21:33 PAGE 1   
+
+
+C51 COMPILER V8.16, COMPILATION OF MODULE DEMOCODE4
+OBJECT MODULE PLACED IN democode4.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE democode4.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<REGX51.H>
+   2          
+   3          void main()
+   4          {
+   5   1              unsigned char num[]     = {0x5b, 0x06, 0x06, 0x7d, 0x5b, 0x06, 0x3f, 0x06, 0x3f, 0x06, 0x5b}; //21162101012
+   6   1              
+   7   1              P1 = 0x00;
+   8   1              while(1)
+   9   1              {
+  10   2                      int i,j,k;
+  11   2                      for(i=0; i<sizeof(num); i++)
+  12   2                      {
+  13   3                              P1 = num[i];
+  14   3                              for(j=0; j<32000; j++)
+  15   3                              {}
+  16   3                              for(j=0; j<32000; j++)
+  17   3                              {}
+  18   3                      }
+  19   2                      for(k=0; k<30000; k++)
+  20   2                      {
+  21   3                              P1 = 0x00;
+  22   3                      }
+  23   2              }
+  24   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    122    ----
+   CONSTANT SIZE    =     11    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      17
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

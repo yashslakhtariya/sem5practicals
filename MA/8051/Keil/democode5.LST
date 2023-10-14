@@ -1,0 +1,30 @@
+C51 COMPILER V8.16   DEMOCODE5                                                             10/12/2023 12:36:06 PAGE 1   
+
+
+C51 COMPILER V8.16, COMPILATION OF MODULE DEMOCODE5
+OBJECT MODULE PLACED IN democode5.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE democode5.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<REGX51.H>
+   2          
+   3          void main()
+   4          {
+   5   1              P1 = 0x06;
+   6   1              P3 = 0X5b;
+   7   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =      7    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,36 @@
+A51 MACRO ASSEMBLER  DEMOCODE                                                             10/05/2023 11:43:40 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.01
+OBJECT MODULE PLACED IN democode.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE democode.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000 7430              1     MOV A,#30H
+0002 78A0              2     MOV R0,#0A0H
+0004 7F0F              3     MOV R7,#15
+                       4     
+0006 E8                5     MOV A,R0
+0007 F50B              6     MOV 0BH,A
+                       7     
+0009 C2D4              8     CLR PSW.4        
+000B D2D3              9     SETB PSW.3  
+                      10     
+                      11     
+*** WARNING #A41 IN 11 (democode.asm, LINE 11): MISSING 'END' STATEMENT
+A51 MACRO ASSEMBLER  DEMOCODE                                                             10/05/2023 11:43:40 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+PSW. . . . . . . .  D ADDR   00D0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 0 ERROR(S)
