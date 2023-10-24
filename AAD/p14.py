@@ -15,35 +15,37 @@ def queens(r, n):
           if (possible(r, c)):
                q[r] = c
                if (r == n):
-                    print('One of the possible ways: ')
+                    YSL_io.printCYN('\n\tOne of the possible ways : \n')
                     disQ()
-                    print()
                else:
                     queens(r+1, n)
                     
 def disQ():
      global q
-     chb = np.empty((len(q)-1, len(q)-1), dtype=str)
+     board = np.empty((len(q)-1, len(q)-1), dtype=str)
      for i in range(len(q)-1):
           if (i % 2 == 0):
                for j in range(0,len(q)-1,2):
-                    chb[i,j] = '⬜'
+                    board[i,j] = '⬜'
                for j in range(1,len(q)-1,2):
-                    chb[i,j] = '⬛'
+                    board[i,j] = '⬛'
           else:
                for j in range(1,len(q)-1,2):
-                    chb[i,j] = '⬜'
+                    board[i,j] = '⬜'
                for j in range(0,len(q)-1,2):
-                    chb[i,j] = '⬛'
-     chb = np.reshape(chb, (len(q)-1, len(q)-1))
+                    board[i,j] = '⬛'
+     board = np.reshape(board, (len(q)-1, len(q)-1))
      for i in range(1,len(q)):
-          chb[i-1, q[i]-1] = '👑'
+          board[i-1, q[i]-1] = '👑'
      for i in range(len(q)-1):
           for j in range(len(q)-1):
-               print(chb[i, j], end=' ')
+               if j % 4 == 0: # to display with '\t' at each line of board
+                    print('\t' + board[i, j], end='')
+               else:
+                    print(board[i, j], end='')
           print()
           
-n = int(input("Please input the number of queens: "))
+n = int(YSL_io.inputORNG("\n\tPlease input the number of queens: "))
 q = [0 for _ in range(n+1)]
 
 queens(1, n)
