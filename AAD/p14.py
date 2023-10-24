@@ -15,12 +15,12 @@ def queens(r, n):
           if (possible(r, c)):
                q[r] = c
                if (r == n):
-                    YSL_io.printCYN('\n\tOne of the possible ways : \n')
-                    disQ()
+                    YSL_io.printCYN('\n\tPossible solution : \n')
+                    disQ(n)
                else:
                     queens(r+1, n)
                     
-def disQ():
+def disQ(n):
      global q
      board = np.empty((len(q)-1, len(q)-1), dtype=str)
      for i in range(len(q)-1):
@@ -39,7 +39,7 @@ def disQ():
           board[i-1, q[i]-1] = '👑'
      for i in range(len(q)-1):
           for j in range(len(q)-1):
-               if j % 4 == 0: # to display with '\t' at each line of board
+               if j % n == 0: # to display with '\t' at each line of board
                     print('\t' + board[i, j], end='')
                else:
                     print(board[i, j], end='')
