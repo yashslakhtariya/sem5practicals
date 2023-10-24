@@ -27,7 +27,7 @@ def is_solved(state):
     return state == GOAL
 
 
-def tiles_out_of_place(state):
+def misplaced_tiles(state):
     count = 0
     for i in range(4):
         for j in range(4):
@@ -50,7 +50,7 @@ def branch_and_bound(initial_state):
             if apply_move(new_state, move):
                 new_path = path + [new_state]
                 queue.append((new_state, new_path))
-                queue.sort(key=lambda x: tiles_out_of_place(x[0]))
+                queue.sort(key=lambda x: misplaced_tiles(x[0]))
 
     return None
 
