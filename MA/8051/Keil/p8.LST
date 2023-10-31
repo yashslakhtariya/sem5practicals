@@ -1,0 +1,46 @@
+A51 MACRO ASSEMBLER  P8                                                                   10/19/2023 12:29:43 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.01
+OBJECT MODULE PLACED IN p8.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE p8.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     INFINITE:
+0000 7808              2             MOV R0,#08H           
+0002 E5A0              3             MOV A,P2     
+0004                   4             EIGHT:
+0004 13                5                     RRC A         
+0005 92B0              6                     MOV P3.0,C
+0007 110D              7                     ACALL DELAY
+0009 D8F9              8                     DJNZ R0,EIGHT
+000B 80F3              9     SJMP INFINITE
+                      10     
+000D 7C46             11     DELAY: MOV R4,#70
+000F 7A46             12     DELAY2: MOV R2,#70
+0011 DAFE             13             HERE: DJNZ R2,HERE
+0013 DCFA             14             DJNZ R4,DELAY2
+0015 22               15     RET
+                      16     END
+A51 MACRO ASSEMBLER  P8                                                                   10/19/2023 12:29:43 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   000DH   A   
+DELAY2 . . . . . .  C ADDR   000FH   A   
+EIGHT. . . . . . .  C ADDR   0004H   A   
+HERE . . . . . . .  C ADDR   0011H   A   
+INFINITE . . . . .  C ADDR   0000H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

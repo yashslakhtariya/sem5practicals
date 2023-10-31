@@ -1,0 +1,126 @@
+C51 COMPILER V8.16   P7_2                                                                  10/18/2023 21:26:03 PAGE 1   
+
+
+C51 COMPILER V8.16, COMPILATION OF MODULE P7_2
+OBJECT MODULE PLACED IN p7_2.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE p7_2.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          void delay(){
+   4   1              int i,j;
+   5   1              
+   6   1              for(i=0;i<200;i++){
+   7   2                      for(j=0;j<300;j++){
+   8   3                              
+   9   3                      }
+  10   2              }
+  11   1      }
+  12          
+  13          void main()
+  14          {
+  15   1              while(1)
+  16   1                      {
+  17   2                              int k;
+  18   2                              P1 = 0x00;
+  19   2                              P2 = 0x00;
+  20   2                              P3 = 0x00;
+  21   2                              delay();
+  22   2                              P1 = 0x02;
+  23   2                              delay();
+  24   2                              P1 = 0x08;
+  25   2                              delay();
+  26   2                              P1 = 0x20;
+  27   2                              delay();
+  28   2                              P1 = 0x80;
+  29   2                              delay();
+  30   2                              P1 = 0x00;
+  31   2      
+  32   2      
+  33   2                              P2 = 0x02;
+  34   2                              delay();
+  35   2                              P2 = 0x08;
+  36   2                              delay();
+  37   2                              P2 = 0x20;
+  38   2                              delay();
+  39   2                              P2 = 0x80;
+  40   2                              delay();
+  41   2                              P2 = 0x00;
+  42   2                              
+  43   2      
+  44   2                              P3 = 0x02;
+  45   2                              delay();
+  46   2                              P3 = 0x08;
+  47   2                              delay();
+  48   2                              P3 = 0x20;
+  49   2                              delay();
+  50   2                              P3 = 0x80;
+  51   2                              delay();
+  52   2                              P3 = 0x00;
+  53   2      
+  54   2                              for (k=0; k<5; k++)
+  55   2                              {
+C51 COMPILER V8.16   P7_2                                                                  10/18/2023 21:26:03 PAGE 2   
+
+  56   3                                      P1= 0xFF;
+  57   3                                      P2= 0xFF;
+  58   3                                      P3= 0xFF;
+  59   3                                      delay();
+  60   3                                      P1= 0x00;
+  61   3                                      P2= 0x00;
+  62   3                                      P3= 0x00;
+  63   3                                      delay();
+  64   3                              }
+  65   2                              
+  66   2                              P3 = 0x40;
+  67   2                              delay();
+  68   2                              P3 = 0x10;
+  69   2                              delay();
+  70   2                              P3 = 0x04;
+  71   2                              delay();
+  72   2                              P3 = 0x01;
+  73   2                              delay();
+  74   2                              P3 = 0x00;
+  75   2                              delay();
+  76   2                                      
+  77   2                              P2 = 0x40;
+  78   2                              delay();
+  79   2                              P2 = 0x10;
+  80   2                              delay();
+  81   2                              P2 = 0x04;
+  82   2                              delay();
+  83   2                              P2 = 0x01;
+  84   2                              delay();
+  85   2                              P2 = 0x00;
+  86   2                              delay();
+  87   2                              
+  88   2                              P1 = 0x40;
+  89   2                              delay();
+  90   2                              P1 = 0x10;
+  91   2                              delay();
+  92   2                              P1 = 0x04;
+  93   2                              delay();
+  94   2                              P1 = 0x01;
+  95   2                              delay();
+  96   2                              P1 = 0x00;
+  97   2                              delay();
+  98   2      
+  99   2              }
+ 100   1              
+ 101   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    251    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
